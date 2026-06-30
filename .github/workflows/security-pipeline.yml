@@ -37,6 +37,7 @@ jobs:
 
       - name: SAST - Bandit
         run: |
+          mkdir -p reports
           bandit -r app/ detector/ \
             --severity-level medium \
             --confidence-level medium \
