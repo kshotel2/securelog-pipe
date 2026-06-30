@@ -12,6 +12,8 @@ Usage:
     WEBHOOK_TYPE - "slack" (기본값) 또는 "discord"
 """
 
+from __future__ import annotations
+
 import json
 import os
 import sys

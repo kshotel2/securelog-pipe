@@ -11,6 +11,8 @@ Usage:
     ES_INDEX - 인덱스 이름 (기본값: security-events)
 """
 
+from __future__ import annotations
+
 import json
 import os
 import sys
