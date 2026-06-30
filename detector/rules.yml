@@ -1,0 +1,53 @@
+rules:
+  - id: SQLI-001
+    name: SQL Injection Attempt
+    severity: high
+    patterns:
+      - "' OR '"
+      - "'%20OR%20'"
+      - "1=1"
+      - "1=1--"
+      - "UNION SELECT"
+      - "UNION%20SELECT"
+      - "union select"
+      - "DROP TABLE"
+      - "drop table"
+      - "--"
+      - "/*"
+      - "xp_cmdshell"
+
+  - id: XSS-001
+    name: XSS Attempt
+    severity: medium
+    patterns:
+      - "<script>"
+      - "</script>"
+      - "javascript:"
+      - "onerror="
+      - "onload="
+      - "alert("
+      - "document.cookie"
+      - "<img src"
+      - "eval("
+
+  - id: PATH-001
+    name: Path Traversal Attempt
+    severity: high
+    patterns:
+      - "../"
+      - "..%2f"
+      - "..%2F"
+      - "%2e%2e%2f"
+      - "/etc/passwd"
+      - "/etc/shadow"
+      - "C:\\Windows"
+      - "boot.ini"
+
+  - id: BF-001
+    name: Brute Force Login
+    severity: high
+    threshold:
+      path: "/login"
+      method: "POST"
+      count: 5
+      window_seconds: 60

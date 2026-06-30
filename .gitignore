@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# 환경변수 (Webhook URL 등 시크릿)
+.env
+.env.*
+
+# 로그 및 리포트 (샘플 제외)
+logs/access.log
+reports/detection_report.json
+reports/bandit-report.txt
+
+# Docker
+*.tar
+
+# Elasticsearch 데이터
+es-data/
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
