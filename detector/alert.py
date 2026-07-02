@@ -66,11 +66,11 @@ def send_webhook(payload: dict) -> bool:
         print("[WARN] WEBHOOK_URL not set. Skipping send.")
         return False
 
-    data = json.dumps(payload).encode("utf-8")
+    data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
     req = urllib.request.Request(
         WEBHOOK_URL,
         data=data,
-        headers={"Content-Type": "application/json"},
+        headers={"Content-Type": "application/json", "User-Agent": "SecureLogPipe/1.0"},
         method="POST",
     )
     try:
