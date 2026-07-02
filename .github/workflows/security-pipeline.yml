@@ -60,7 +60,7 @@ jobs:
         with:
           image-ref: securelog-app:ci
           format: table
-          exit-code: 0          # 취약점 발견 시에도 파이프라인 계속 진행 (포트폴리오 데모)
+          exit-code: 0          # 취약점 발견 시에도 파이프라인 계속 진행 (결과 확인 목적)
           severity: CRITICAL,HIGH
 
       - name: Run Detector Test
